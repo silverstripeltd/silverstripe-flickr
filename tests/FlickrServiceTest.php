@@ -110,12 +110,12 @@ class FlickrServiceTest extends SapphireTest
         $service->config()->set('flickr_soft_cache_expiry', 3);
 
         // this should make the first api request
-        $response = $service->getCachedCall('getPhotosetsForUser', array($userId));
+        $response = $service->getCachedCall('getPhotosetsForUser', [$userId]);
         $this->assertEquals($this->callCount, 1);
 
         // this should still use the cached version
         sleep(1);
-        $response = $service->getCachedCall('getPhotosetsForUser', array($userId));
+        $response = $service->getCachedCall('getPhotosetsForUser', [$userId]);
         $this->assertEquals($this->callCount, 1);
     }
 

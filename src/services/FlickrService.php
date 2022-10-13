@@ -135,10 +135,10 @@ class FlickrService
             return null;
         }
 
-        $params = array(
+        $params = [
             'method' => 'flickr.photosets.getInfo',
             'photoset_id' => $photosetId
-        );
+        ];
 
         if (!is_null($userId)) {
             $params['user_id'] = $userId;
@@ -233,7 +233,7 @@ class FlickrService
      * @param  array $args Arguments for the function
      * @return ArrayList<FlickrPhoto|FlickrPhotoset>
      */
-    public function getCachedCall($funcName, $args = array())
+    public function getCachedCall($funcName, $args = [])
     {
         $result = null;
         $argsCount = count($args);
@@ -260,7 +260,7 @@ class FlickrService
         if (!($result = $cache->get($cacheKey))) {
             // try update the cache
             try {
-                $result = call_user_func_array(array($this, $funcName), $args);
+                $result = call_user_func_array([$this, $funcName], $args);
 
                 // only update cache if result returned
                 if ($result) {

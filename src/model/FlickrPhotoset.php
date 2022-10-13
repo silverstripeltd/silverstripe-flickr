@@ -42,8 +42,8 @@ class FlickrPhotoset extends FlickrData
     public static function create_from_array($set, $userId = null)
     {
         // Validate input and return null if required params are not set
-        if (!isset($set['id']) || 
-            !isset($set['title']) || 
+        if (!isset($set['id']) ||
+            !isset($set['title']) ||
             !isset($set['title']['_content'])
         ) {
             return null;

@@ -58,10 +58,10 @@ class FlickrGateway
      */
     private function defaultParams()
     {
-        return array(
+        return [
             'api_key' => $this->getApiKey(),
             'format' => 'php_serial'
-        );
+        ];
     }
 
 
@@ -75,9 +75,9 @@ class FlickrGateway
             return $this->apiAvailable;
         }
 
-        $params = array(
+        $params = [
             'method' => 'flickr.test.echo'
-        );
+        ];
 
         try {
             $response = $this->request($params);
