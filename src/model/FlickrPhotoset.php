@@ -3,6 +3,7 @@
 namespace MadMatt\Flickr\Model;
 
 use MadMatt\Flickr\Model\FlickrData;
+use MadMatt\Flickr\Services\FlickrService;
 use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Control\Director;
 
@@ -59,7 +60,7 @@ class FlickrPhotoset extends FlickrData
     public function getPhotos()
     {
         /** @var FlickrService $flickrService */
-        $flickrService = Injector::inst()->get('FlickrService');
+        $flickrService = Injector::inst()->get(FlickrService::class);
 
         return $flickrService->getPhotosInPhotoset($this->ID);
     }
