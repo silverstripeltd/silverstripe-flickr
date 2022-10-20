@@ -1,5 +1,5 @@
 {
-	"name": "silverstripeltd/silverstripe-flickr",
+	"name": "madmatt/silverstripe-flickr",
 	"description": "Provides simple bindings for the Flickr API, converting API responses into SilverStripe objects",
 	"type": "silverstripe-vendormodule",
 	"license": "BSD-3-Clause",
